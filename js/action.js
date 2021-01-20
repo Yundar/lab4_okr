@@ -3,7 +3,7 @@ import {ShowPreLoader} from "./script.js"
 
 export default class Action {
     constructor(){
-        this.route = "actions";
+        this.route = "action";
         this.content = document.getElementById("content");
         
     }
