@@ -82,7 +82,7 @@ async function init_end_points(){
     cart_end_points = products_end_points.slice();
     cart_end_points.push("clear");
 
-    return {actions_end_points, orders_end_points, cart_end_points}
+    return {actions_end_points, products_end_points, cart_end_points}
 }
 
 let cart = new Cart();

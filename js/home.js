@@ -34,7 +34,7 @@ export default class Home{
                     <img src="img/slider/action.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="img/slide/life-begins.png" alt="">
+                    <img src="img/slider/life-begins.png" alt="">
                 </div>
             </div>
             
