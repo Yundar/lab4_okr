@@ -84,9 +84,6 @@ export default class Home{
             activeDot(ind);
         }
 
-        console.log(dots);
-        console.log(slides);
-
         dots.forEach((item, indexDot) => {
             item.addEventListener('click', () => {
                 index = indexDot;
