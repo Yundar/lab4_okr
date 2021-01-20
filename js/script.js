@@ -94,7 +94,6 @@ let product = new Product();
 
 
 let main = new Main(home, [cart, home, action, coffePage, dessertPage, product]);
-main.loadDefaultPage();
 (async function() {
 
     let end_points = await init_end_points();  
