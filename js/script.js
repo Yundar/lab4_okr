@@ -60,8 +60,8 @@ export function ShowPreLoader(){
                 </path>
             </svg>
         </div>
-    `
-}
+    `;
+};
 
 async function init_end_points(){
 
