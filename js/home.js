@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import { ShowPreLoader } from "./script.js";
+=======
+import {getData} from "./script.js";
+import {ShowPreLoader} from "./script.js";
+>>>>>>> gh-pages
 
 export default class Home{
     constructor(){
-        this.route = "home";
+        this.route = 'home';
         this.content = document.getElementById("content");
     }
 
@@ -33,7 +38,7 @@ export default class Home{
                     <img src="img/slider/action.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="img/slide/life-begins.png" alt="">
+                    <img src="img/slider/life-begins.png" alt="">
                 </div>
             </div>
             
@@ -54,14 +59,14 @@ export default class Home{
         let index = 0;
 
         const activeSlide = n => {
-            for(slide of slides) {
+            for(let slide of slides) {
                 slide.classList.remove('active');
             }
             slides[n].classList.add('active');
         }
 
         const activeDot = n => {
-            for(dot of dots) {
+            for(let dot of dots) {
                 dot.classList.remove('active');
             }
             dots[n].classList.add('active');
@@ -82,8 +87,6 @@ export default class Home{
             activeSlide(ind);
             activeDot(ind);
         }
-
-        console.log(dots)
 
         dots.forEach((item, indexDot) => {
             item.addEventListener('click', () => {

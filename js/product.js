@@ -1,4 +1,4 @@
-import { getData, ShowPreLoader } from "./script";
+import { getData, ShowPreLoader } from "./script.js";
 
 export default class Product {
     constructor() {

@@ -1,13 +1,13 @@
 export default class Router {
-    constructor({products_end_points, actions_end_points, catalog_end_points, orders_end_points, cart_end_points}, main){
+    constructor({products_end_points, actions_end_points, cart_end_points}, main){
         
         window.addEventListener('hashchange', () => this.onRouteChange());
 
         this.end_points = {
             "home": '',
             "cart": cart_end_points,
-            "action": actions_end_points,
-            "checkout": orders_end_points
+            "actions": actions_end_points,
+            "product": products_end_points,
         }
         
         this.main = main;

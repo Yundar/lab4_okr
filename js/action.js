@@ -1,18 +1,21 @@
 import {getData} from "./script.js"
 import {ShowPreLoader} from "./script.js"
 
-export default class ActionPage {
+export default class Action {
     constructor(){
-        this.route = "action";
+        this.route = "actions";
         this.content = document.getElementById("content");
         
     }
     
     loadPage(hash){
+        console.log(hash);
+
         if (hash == null){
             return false;
         }
         else {
+            console.log(1);
             this.loadProductPage(hash);
         }
         return true;
@@ -26,7 +29,9 @@ export default class ActionPage {
         let action = data.actions.filter(action => {
             return action.url === hash;
         }); 
+        console.log(1);
         action = action[0];
+        
         
 
         this.content.innerHTML = `
