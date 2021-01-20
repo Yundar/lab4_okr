@@ -1,7 +1,7 @@
 import {getData} from "./script.js"
 import {ShowPreLoader} from "./script.js"
 
-export default class ActionPage {
+export default class Action {
     constructor(){
         this.route = "actions";
         this.content = document.getElementById("content");
