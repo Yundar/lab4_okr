@@ -27,6 +27,7 @@ export default class Action {
             return action.url === hash;
         }); 
         action = action[0];
+        console.log(action);
         
 
         this.content.innerHTML = `
