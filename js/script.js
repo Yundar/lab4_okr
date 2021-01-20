@@ -6,6 +6,7 @@ import Action from "./action.js";
 import Coffee from "./coffee.js";
 import Dessert from "./dessert.js";
 import Product from "./product.js";
+import Tea from "./tea.js";
 
 
 // menu.onclick = function myFunction() {
@@ -70,15 +71,36 @@ async function init_end_points(){
     let products_end_points = [];
     let actions_end_points = [];
     let cart_end_points = [];
+    let coffee_end_points = [];
+    let dessert_end_points = [];
+    let tea_end_points = [];
+    let catalog_end_points = [];
 
     data.products.forEach(product => {
         products_end_points.push(product.url);
     })
     
     data.actions.forEach(action => {
-        console.log(action);
         actions_end_points.push(action.url)
     })
+
+    data.products.forEach(product => {
+        if(product.type == "coffee"){
+            coffee_end_points.push(product.url);
+        }
+    })
+    data.products.forEach(product => {
+        if(product.type == "dessert"){
+            dessert_end_points.push(product.url);
+        }
+    })
+    data.products.forEach(product => {
+        if(product.type == "tea"){
+            tea_end_points.push(product.url);
+        }
+    })
+
+    catalog_end_points = ["coffee", "dessert", "tea"];
 
     cart_end_points = products_end_points.slice();
     cart_end_points.push("clear");
@@ -92,9 +114,10 @@ let actions = new Action();
 let coffePage = new Coffee();
 let dessertPage = new Dessert();
 let product = new Product();
+let teaPage = new Tea();
 
 
-let main = new Main(home, [cart, home, actions, coffePage, dessertPage, product]);
+let main = new Main(home, [cart, home, actions, coffePage, dessertPage, product, teaPage]);
 (async function() {
 
     let end_points = await init_end_points();  
