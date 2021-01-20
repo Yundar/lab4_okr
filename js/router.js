@@ -27,6 +27,7 @@ export default class Router {
 
         const fullRoute = window.location.hash.substring(1);
         const splitedHash = fullRoute.split('/');
+        console.log(splitedHash);
 
         let route;
         let hash;
