@@ -1,6 +1,7 @@
 import {getData} from "./script.js";
 import {ShowPreLoader} from "./script.js";
 
+
 export default class Home{
     constructor(){
         this.route = 'home';
@@ -12,12 +13,33 @@ export default class Home{
         return true;
     }
 
-    loadHome() {
+    async loadHome() {
 
         this.content.innerHTML = ShowPreLoader();
 
+        let data = await getData();
+        let products = data.products;
+
         this.content.innerHTML = `
         ${this.loadSlider()}
+        <div class="category_name">Кофе</div>
+        <div class="product-list-wrapper">  
+            <div class="product-list" style="position: relative">
+                ${this.loadCoffee(products)}
+            </div>
+        </div>
+        <div class="category_name">Чай</div>
+        <div class="product-list-wrapper">  
+            <div class="product-list" style="position: relative">
+                ${this.loadTea(products)}
+            </div>
+        </div>
+        <div class="category_name">Дессерты</div>
+        <div class="product-list-wrapper">  
+            <div class="product-list" style="position: relative">
+                ${this.loadDessert(products)}
+            </div>
+        </div>
         `;
         this.sliderScript();
         
@@ -93,5 +115,106 @@ export default class Home{
 
         const interval = setInterval(nextSlide, 5000);
 
+    }
+
+    loadCoffee(catalog) {
+        let catalog_content = '';
+
+        catalog.forEach(coffee => {
+            if(coffee.type == "coffee"){
+                catalog_content += `
+                <div class="product-block">
+                    <a class="product-block__image" href="#product/${coffee.url}">
+                        <img src="${coffee.image}" alt="image">
+                    </a>
+                    <div class="product-block__description">
+                        <div class="product-block__title-row">
+                            <a class="product-block__title-text">${coffee.title}</a>
+                        </div>
+                        <div class="product-block__price-row">
+                            <div class="product-block__price-block">
+                                <div>
+                                    <span class="product-block__price">${coffee.price}</span>
+                                    <span class="product-block__currency">грн</span>
+                                </div>
+                            </div>
+                            <div class="product-block__btn-wrap">
+                                <button type="button" class="product-block__cart-button">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            }
+            
+        });
+
+        return catalog_content;
+    }
+
+    loadTea(catalog) {
+        let catalog_content = '';
+
+        catalog.forEach(tea => {
+            if(tea.type == "tea"){
+                catalog_content += `
+                <div class="product-block">
+                    <a class="product-block__image" href="#product/${tea.url}">
+                        <img src="${tea.image}" alt="image">
+                    </a>
+                    <div class="product-block__description">
+                        <div class="product-block__title-row">
+                            <a class="product-block__title-text">${tea.title}</a>
+                        </div>
+                        <div class="product-block__price-row">
+                            <div class="product-block__price-block">
+                                <div>
+                                    <span class="product-block__price">${tea.price}</span>
+                                    <span class="product-block__currency">грн</span>
+                                </div>
+                            </div>
+                            <div class="product-block__btn-wrap">
+                                <button type="button" class="product-block__cart-button">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            }
+            
+        });
+
+        return catalog_content;
+    }
+
+    loadDessert(catalog) {
+        let catalog_content = '';
+
+        catalog.forEach(dessert => {
+            if(dessert.type == "dessert"){
+                catalog_content += `
+                <div class="product-block">
+                    <a class="product-block__image" href="#product/${dessert.url}">
+                        <img src="${dessert.image}" alt="image">
+                    </a>
+                    <div class="product-block__description">
+                        <div class="product-block__title-row">
+                            <a class="product-block__title-text">${dessert.title}</a>
+                        </div>
+                        <div class="product-block__price-row">
+                            <div class="product-block__price-block">
+                                <div>
+                                    <span class="product-block__price">${dessert.price}</span>
+                                    <span class="product-block__currency">грн</span>
+                                </div>
+                            </div>
+                            <div class="product-block__btn-wrap">
+                                <button type="button" class="product-block__cart-button">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            }
+        });
+
+        return catalog_content;
     }
 }

@@ -36,9 +36,9 @@ export default class Tea {
             if(tea.type == "tea"){
                 catalog_content += `
                 <div class="product-block">
-                    <div class="product-block__image">
+                    <a class="product-block__image" href="#product/${tea.url}">
                         <img src="${tea.image}" alt="image">
-                    </div>
+                    </a>
                     <div class="product-block__description">
                         <div class="product-block__title-row">
                             <a class="product-block__title-text">${tea.title}</a>
