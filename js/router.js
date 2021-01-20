@@ -6,7 +6,7 @@ export default class Router {
         this.end_points = {
             "home": '',
             "cart": cart_end_points,
-            "action": actions_end_points,
+            "actions": actions_end_points,
             "product": products_end_points,
         }
         

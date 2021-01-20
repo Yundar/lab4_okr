@@ -9,10 +9,13 @@ export default class Action {
     }
     
     loadPage(hash){
+        console.log(hash);
+
         if (hash == null){
             return false;
         }
         else {
+            console.log(1);
             this.loadProductPage(hash);
         }
         return true;
@@ -26,8 +29,9 @@ export default class Action {
         let action = data.actions.filter(action => {
             return action.url === hash;
         }); 
+        console.log(1);
         action = action[0];
-        console.log(action);
+        
         
 
         this.content.innerHTML = `

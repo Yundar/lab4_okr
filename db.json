@@ -129,6 +129,7 @@
     }],
 
     "actions":[{
+        "url": "coffee_action",
         "name": "Кофеман",
         "image": "./img/actions/action.png",
         "description": "Ежедневная скидка 30% на всё кофейное меню с 10:00 до 12:00"

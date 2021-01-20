@@ -76,6 +76,7 @@ async function init_end_points(){
     })
     
     data.actions.forEach(action => {
+        console.log(action);
         actions_end_points.push(action.url)
     })
 
@@ -87,13 +88,13 @@ async function init_end_points(){
 
 let cart = new Cart();
 let home = new Home();
-let action = new Action();
+let actions = new Action();
 let coffePage = new Coffee();
 let dessertPage = new Dessert();
 let product = new Product();
 
 
-let main = new Main(home, [cart, home, action, coffePage, dessertPage, product]);
+let main = new Main(home, [cart, home, actions, coffePage, dessertPage, product]);
 (async function() {
 
     let end_points = await init_end_points();  
