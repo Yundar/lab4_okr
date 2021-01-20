@@ -1,5 +1,5 @@
 export default class Router {
-    constructor({products_end_points, actions_end_points, catalog_end_points, orders_end_points, cart_end_points}, main){
+    constructor({products_end_points, actions_end_points, cart_end_points}, main){
         
         window.addEventListener('hashchange', () => this.onRouteChange());
 
@@ -7,7 +7,7 @@ export default class Router {
             "home": '',
             "cart": cart_end_points,
             "action": actions_end_points,
-            "checkout": orders_end_points
+            "product": products_end_points,
         }
         
         this.main = main;

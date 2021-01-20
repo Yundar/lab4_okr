@@ -1,8 +1,9 @@
-import { ShowPreLoader } from "./script.js";
+import {getData} from "./script.js";
+import {ShowPreLoader} from "./script.js";
 
 export default class Home{
     constructor(){
-        this.route = "home";
+        this.route = 'home';
         this.content = document.getElementById("content");
     }
 
