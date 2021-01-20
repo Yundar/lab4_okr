@@ -3,8 +3,12 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>MyCompany</title>
-        <link rel="stylesheet" href="style.css" >
+        <title>CoffeeTown</title>
+        <link rel="stylesheet" href="css/style.css" >
+        <link rel="stylesheet" href="css/cart.css" >
+        <link rel="stylesheet" href="css/actions.css" >
+        <link rel="stylesheet" href="css/product.css" >
+
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
     </head>
     <body>
@@ -12,14 +16,14 @@
             <a href='#' class="header__logo"><img  src="img/coffee.png"></a>
             <nav>
                 <div class="topnav" id="myTopnav">
-                    <a href="#" id="need-border">COFFEE</a>
-                    <a href="#" id="need-border">DESERTS</a>
-                    <a href="#">ACTIONS</a>
+                    <a href="#coffee" id="need-border">COFFEE</a>
+                    <a href="#dessert" id="need-border">DESSERTS</a>
+                    <a href="#actions">ACTIONS</a>
                     <a href="#" id="menu" class="icon">&#9776;</a>
                 </div>
             </nav>
             <div class="button-cart">
-                <div class="button-cart__icon-wrap">
+                <a class="button-cart__icon-wrap" href="#cart">
                     <div class="button-cart--info-quantity">00</div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 510">
                         <path 
@@ -28,14 +32,13 @@
                         c20.4,0,35.7-10.2,43.35-25.5L504.9,89.25c5.1-5.1,5.1-7.65,5.1-12.75c0-15.3-10.2-25.5-25.5-25.5H107.1L84.15,0H0z M408,408
                         c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S436.05,408,408,408z"></path>
                     </svg>
-                </div>
+                </a>
                 <button type="button" class="button-cart__order-button" disabled="">Заказать</button>
             </div>
             
         </header>
         <main>
             <div class="content">
-                
                 
             </div>
         </main>
@@ -50,7 +53,7 @@
             </div>
         </footer>
 
-        <script type="module" src="./script.js"></script>
+        <script type="module" src="js/script.js"></script>
         <script>
             window.onload = function () {
               document.body.classList.add('loaded_hiding');
