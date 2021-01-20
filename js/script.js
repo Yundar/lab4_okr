@@ -93,7 +93,7 @@ let dessertPage = new Dessert();
 let product = new Product();
 
 
-let main = new Main([cart, home, action, coffePage, dessertPage, product], home);
+let main = new Main(home, [cart, home, action, coffePage, dessertPage, product]);
 main.loadDefaultPage();
 (async function() {
 
