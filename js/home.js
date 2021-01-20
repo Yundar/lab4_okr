@@ -1,4 +1,4 @@
-import { ShowPreLoader } from "./script";
+import { ShowPreLoader } from "./script.js";
 
 export default class Home{
     constructor(){
