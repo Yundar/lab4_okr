@@ -78,7 +78,56 @@
         "type": "dessert",
         "image": "./img/products/charlotte.png",
         "description":"Сладкий десерт из яблок, запечённых в тесте — вариант яблочного пирога."
+    },
+    {
+        "url": "apelsin_marakuya",
+        "title": "Апельсин - маракуйа",
+        "price": 20,
+        "type": "tea",
+        "image": "./img/products/apelsin_marakuya.png",
+        "description":"Состав чая: апельсин, лимон, сироп маракуйя, сок апельсиновый"
+    },
+    {
+        "url": "malina",
+        "title": "Малиновый",
+        "price": 20,
+        "type": "tea",
+        "image": "./img/products/malina.png",
+        "description":"Состав чая: лимон, малина, сироп малина"
+    },
+    {
+        "url": "imbir",
+        "title": "Имбирный чай",
+        "price": 82,
+        "type": "tea",
+        "image": "./img/products/imbir.png",
+        "description":"Состав чая: корень имбиря, лимон, мед"
+    },
+    {
+        "url": "arkaliyskiy",
+        "title": "Аркалийський чай",
+        "price": 82,
+        "type": "tea",
+        "image": "./img/products/arkaliyskiy.png",
+        "description":"Состав чая: облепиха, имбирь, мед, мята, специи"
+    },
+    {
+        "url": "marokkanskiy",
+        "title": "Марокканский чай",
+        "price": 82,
+        "type": "tea",
+        "image": "./img/products/marokkanskiy.png",
+        "description":"Состав чая: зеленый чай, лайм, лимон, лаймовый сироп, мята"
+    },
+    {
+        "url": "masala",
+        "title": "Чай Масала",
+        "price": 82,
+        "type": "tea",
+        "image": "./img/products/masala.png",
+        "description":"Состав чая: черный чай, специи, молоко, мед"
     }],
+
     "actions":[{
         "name": "Кофеман",
         "image": "./img/actions/action.png",
