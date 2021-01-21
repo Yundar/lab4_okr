@@ -50,9 +50,9 @@ export default class Dessert {
                                     <span class="product-block__currency">грн</span>
                                 </div>
                             </div>
-                            <div class="product-block__btn-wrap">
+                            <a class="product-block__btn-wrap" href="#cart/${dessert.url}">
                                 <button type="button" class="product-block__cart-button">В корзину</button>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>`;
