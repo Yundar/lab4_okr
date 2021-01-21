@@ -11,11 +11,6 @@ export default class Cart {
 
     async loadPage(hash) {
 
-        let data = await getData()
-        let tempProducts = data.products;
-
-        this.products = tempProducts;
-
         if (hash == null){
             this.loadCart();
             return false;
@@ -32,8 +27,11 @@ export default class Cart {
         return true;
     }
 
-    loadCart() {
+    async loadCart() {
         const page = document.getElementById("content");
+
+        let data = await getData()
+        let products = data.products;
         
         let itemsInCart = [];
         let cartLocalStorage = JSON.parse(localStorage.getItem("cart"));
@@ -41,7 +39,8 @@ export default class Cart {
             itemsInCart.push(item.url);
         });
 
-        let itemsToShow = this.products.filter(product => {
+        console.log(products);
+        let itemsToShow = products.filter(product => {
             return itemsInCart.includes(product.url)
         });
 
@@ -94,7 +93,9 @@ export default class Cart {
     }
 
     addItemToCartLocalStorage(subHash) {
-        window.location = "#cart";
+
+        // window.location = "#cart";
+        
         let counterCart = document.getElementById("cart-counter");
 
         let itemsCart = JSON.parse(localStorage.getItem("cart"));
