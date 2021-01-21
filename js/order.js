@@ -83,7 +83,6 @@ export default class Order {
         page.innerHTML = `
             <p class="order-top">Мы готовим ваш заказ </p>
             <div class="order">
-\
                 <span class="head">Ваши данные:</span>   
                 <div class="info-item">               
                     <div class="item">
@@ -118,51 +117,6 @@ export default class Order {
 
     }
 
-    async orderedItems() {
-        let clientOrder = JSON.parse(localStorage.getItem("cart"));
-
-        let itemsInCart = [];
-        clientOrder.forEach(item => {
-            itemsInCart.push(item.url);
-        });
-
-        console.log(itemsInCart);
-
-        console.log(this.cart.products)
-
-        let itemsToShow = this.cart.products.filter(product => {
-            return itemsInCart.includes(product.url)
-        })
-
-        let orderBody = '';
-
-        let totalPrice = 0;
-
-        itemsToShow.forEach(product => {
-
-            let amount = clientOrder.filter(itemShow => {
-                return product.url === itemShow.url;
-            })[0].amount;
-
-            orderBody += `
-                <div class="item">
-                    <span class="left">${product.title}  x${amount}</span>      
-                    <span></span> 
-                    <span class="right">${product.price*amount} ₴</span>          
-                </div>
-            `
-            totalPrice += product.price*amount
-        });
-
-        orderBody += `
-            <div class="info-item">
-                <span>Стоимость:</span>
-                <span></span>
-                <span class="right">${totalPrice} ₴</span>   
-            </div>
-        `
-        return orderBody;
-    }
 
     showError(){
         document.getElementById("content").innerHTML = `
