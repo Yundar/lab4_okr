@@ -2,7 +2,7 @@ import {getData, sendRequest} from "./script.js"
 
 export default class Order {
     constructor(cart){
-        this.hash = "order";
+        this.route = "order";
 
         this.cart = cart
     }
@@ -83,10 +83,7 @@ export default class Order {
         page.innerHTML = `
             <p class="order-top">Мы готовим ваш заказ </p>
             <div class="order">
-                <span class="head">Товар:</span>
-                <div id="ordered-deserts">
-                    ${this.orderedItems()}  
-                </div>
+\
                 <span class="head">Ваши данные:</span>   
                 <div class="info-item">               
                     <div class="item">
@@ -128,6 +125,10 @@ export default class Order {
         clientOrder.forEach(item => {
             itemsInCart.push(item.url);
         });
+
+        console.log(itemsInCart);
+
+        console.log(this.cart.products)
 
         let itemsToShow = this.cart.products.filter(product => {
             return itemsInCart.includes(product.url)

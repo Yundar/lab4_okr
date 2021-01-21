@@ -31,7 +31,7 @@ export default class Cart {
         const page = document.getElementById("content");
 
         let data = await getData()
-        let products = data.products;
+        this.products = data.products;
         
         let itemsInCart = [];
         let cartLocalStorage = JSON.parse(localStorage.getItem("cart"));
@@ -39,8 +39,7 @@ export default class Cart {
             itemsInCart.push(item.url);
         });
 
-        console.log(products);
-        let itemsToShow = products.filter(product => {
+        let itemsToShow = this.products.filter(product => {
             return itemsInCart.includes(product.url)
         });
 

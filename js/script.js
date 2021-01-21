@@ -117,7 +117,7 @@ let coffePage = new Coffee();
 let dessertPage = new Dessert();
 let product = new Product();
 let teaPage = new Tea();
-let order = new Order();
+let order = new Order(cart);
 
 
 let main = new Main(home, [order, cart, home, actions, coffePage, dessertPage, product, teaPage]);
