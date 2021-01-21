@@ -52,9 +52,9 @@ export default class Home{
                 <div class="slide active">
                     <img src="img/slider/coffee-to-go.png" alt="">
                 </div>
-                <div class="slide">
+                <a class="slide" href="#actions/coffee_action">
                     <img src="img/slider/action.png" alt="">
-                </div>
+                </a>
                 <div class="slide">
                     <img src="img/slider/life-begins.png" alt="">
                 </div>
@@ -138,9 +138,9 @@ export default class Home{
                                     <span class="product-block__currency">грн</span>
                                 </div>
                             </div>
-                            <div class="product-block__btn-wrap">
+                            <a class="product-block__btn-wrap" href="#cart/${coffee.url}">
                                 <button type="button" class="product-block__cart-button">В корзину</button>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>`;
@@ -172,9 +172,9 @@ export default class Home{
                                     <span class="product-block__currency">грн</span>
                                 </div>
                             </div>
-                            <div class="product-block__btn-wrap">
+                            <a class="product-block__btn-wrap" href="#cart/${tea.url}">
                                 <button type="button" class="product-block__cart-button">В корзину</button>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>`;
@@ -206,9 +206,9 @@ export default class Home{
                                     <span class="product-block__currency">грн</span>
                                 </div>
                             </div>
-                            <div class="product-block__btn-wrap">
+                            <a class="product-block__btn-wrap" href="#cart/${dessert.url}">
                                 <button type="button" class="product-block__cart-button">В корзину</button>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>`;

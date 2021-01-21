@@ -11,7 +11,10 @@ export default class Cart {
 
     async loadPage(hash) {
 
-        this.products = await getData;
+        let data = await getData()
+        let tempProducts = data.products;
+
+        this.products = tempProducts;
 
         if (hash == null){
             this.loadCart();
@@ -44,12 +47,6 @@ export default class Cart {
 
         page.innerHTML = this.loadCartTemplate();
 
-        if(cartLocalStorage.length == 0){
-            // disable buttons
-        } else {
-            // enable 
-        }
-
         let cart_body = document.querySelector('.cart-body');
         let counterCart = document.getElementById("cart-counter");
         let totalPriceEl = document.getElementById("total-price");
@@ -68,7 +65,7 @@ export default class Cart {
                 return item.url === itemShow.url;
             })[0].amount;
 
-            cart_body.innerHTML += this.loadCartDesertTemplate(item, amount);
+            cart_body.innerHTML += this.loadCartProductTemplate(item, amount);
 
             
         });
@@ -97,7 +94,7 @@ export default class Cart {
     }
 
     addItemToCartLocalStorage(subHash) {
-        window.location = "#product/" + subHash;
+        window.location = "#cart";
         let counterCart = document.getElementById("cart-counter");
 
         let itemsCart = JSON.parse(localStorage.getItem("cart"));
@@ -146,7 +143,7 @@ export default class Cart {
 
     loadCartTemplate() {
         return `
-            <div id="cartcont">
+            <div class="cart_wrapper" id="cart_content">
                 <div class="cart-top">
                     <h10 class="cart-title">Корзина</h10>
                 </div>
@@ -155,12 +152,12 @@ export default class Cart {
                         
                     </ul>
                     <p class="total">
-                        <strong>Подытог:</strong>
+                        <strong>Итоговая цена:</strong>
                         <strong><span class="amount" id="total-price">${this.totalPrice}</span> ₴</strong>
                     </p>
                     <p class="cart-button">
-                        <a href="#order"class="button checkout">
-                            Оформление заказа
+                        <a href="#order" class="button_cart">
+                            Оформить заказ
                         </a>
                     </p>
                 </div>
@@ -168,37 +165,30 @@ export default class Cart {
         `
     }
 
-    loadCartDesertTemplate(desert, amount) {
+    loadCartProductTemplate(product, amount) {
         return `
-                        <li class="cart-desert">
-                            <a href="#cart" class="remove-from-cart" id="delete-${desert.url}" aria-label="Remove this item">
-                                ×
-                            </a> 
-                                <span class="item-image">
-                                <a href="#product/${desert.url}">
-                                    <img src="${desert.image}" alt="" width="200" height="200">
+                        <li class="cart-item">
+                            <a href="#cart" class="remove-from-cart" id="delete-${product.url}" aria-label="Remove this item">
+                                ×</a>
+                            <span class="item-image">
+                                <a href="#product/${product.url}">
+                                    <img src="${product.image}" alt="" width="176" height="176">
                                 </a>
                             </span>
                             <span class="cart-description">
                                 <span class="cart-text">Название:   </span>
-                                <a href="#product/${desert.url}" class="item-name">
-                                    ${desert.title}
+                                <a href="#product/${product.url}" class="item-name">
+                                    ${product.title}
                                 </a>
                                 <span class="cart-quantity">
                                     <div class="quantity">
                                         <span class="cart-text">Количество:</span>
-                                        <span  id="amount-${desert.url}"> ${amount}</span>
-                                        <!-- количество 
-                                        <input type="number"  class="input-text"
-                                            step="1" min="0" max="" 
-                                            value="2" title="Кол-во" size="10" inputmode="numeric"
-                                        >
-                                        -->
+                                        <span id="amount-${product.url}"> ${amount}</span>
                                     </div>
                                 </span>
                                 <span class="item-price">
                                     <span class="cart-text">Стоимость:   </span>
-                                    ${desert.price * amount}
+                                    ${product.price * amount}
                                 </span>
                                 ₴
                             </span>

@@ -124,5 +124,6 @@ let main = new Main(home, [cart, home, actions, coffePage, dessertPage, product,
 
     new Router(end_points, main);
     main.loadDefaultPage();
+    main.loadCart();
 
 })();
