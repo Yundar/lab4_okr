@@ -1,3 +1,5 @@
+import {ShowPreLoader} from "./script.js"
+
 export default class Router {
     constructor({orders_end_points, products_end_points, actions_end_points, cart_end_points, coffee_end_points, dessert_end_points, tea_end_points}, main){
         
@@ -22,6 +24,8 @@ export default class Router {
     }
 
     onRouteChange() {
+        let content = document.getElementById("content");
+        content.innerHTML = ShowPreLoader();
 
         window.scrollTo({
             left:0,
