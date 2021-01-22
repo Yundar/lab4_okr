@@ -24,8 +24,6 @@ export default class Router {
     }
 
     onRouteChange() {
-        let content = document.getElementById("content");
-        content.innerHTML = ShowPreLoader();
 
         window.scrollTo({
             left:0,

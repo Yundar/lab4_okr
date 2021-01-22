@@ -93,7 +93,7 @@ export default class Cart {
 
     addItemToCartLocalStorage(subHash) {
 
-        // window.location = "#cart";
+        window.location = "#cart";
         
         let counterCart = document.getElementById("cart-counter");
 
